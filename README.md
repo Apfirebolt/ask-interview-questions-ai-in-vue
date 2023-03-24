@@ -40,6 +40,16 @@ In the future I might use this repository to have additional pages and play arou
 
 Vue 3 is the future. Developers are making a transition from Vue 2 to Vue 3 and for a lot of good reasons. It has better support for Typescript, introduced composition API for better structuring of code based on modules and has refs to target DOM in efficient way.
 
+# Running the project
+
+Take the clone of this project, install npm modules. Go to openAI website and register to get your API key. Please put your API key here inside the env file.
+
+```
+VITE_OPENAI_API_KEY='you key here'
+```
+
+For development use dev script provided by Vite.
+
 # Tech Stack 🔥
 
 * ✍🏻 Vue 3
@@ -56,11 +66,13 @@ Screenshots would be added later, not a lot of them. Just the homepage would be 
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-C --> E[Square Rect]
+## Deployment
+
+Docker script added, can be deployed through Nginx living under a docker container. Default Nginx file needs to be over-written by the custom Nginx file. Build files need to be placed inside Nginx container.
+
+
+Build a docker image and tag it with a name.
+
+```
+docker build -t interview .
 ```
